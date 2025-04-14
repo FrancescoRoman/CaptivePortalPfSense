@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso Wi-Fi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4A90E2, #9013FE);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        input, button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #FF4081;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #E91E63;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .group {
+            margin-top: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Benvenuto nel Captive Portal</h1>
+        <p>Inserisci le tue credenziali per accedere alla rete Wi-Fi</p>
+        <form method="post" action="$PORTAL_ACTION$">
+            <input name="auth_user" type="text" placeholder="Nome utente" required>
+            <input name="auth_pass" type="password" placeholder="Password" required>
+        
+            <input name="accept" type="submit" value="Accedi">
+        </form>
+        <p class="group">Progetto di: Jacopo Tassone, Francesco Romano</p>
+        <p>Non hai un account? <a href="http://192.168.1.100/index.html">Registrati qui</a></p>
+
+    </div>
+</body>
+</html>
